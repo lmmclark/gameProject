@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>垂直居中</title>
+  <style type="text/css">
+  /*1>承载文字内容的高度A
+     文字行高B（line-height）
+     让B=A
+     （要求必须知道承载文字的东西的高度
+     文字为一行。）*/
+     /*2>元素A要居中（元素A的高度是知道的。）
+        可以让元素A在father里面top50%
+        A自己再回去自己高度的一半
+        margin-top:-(heightA/2)*/
+        /*3>元素A有内容
+        想让元素A里面的内容居中
+
+        第一步：给A找一个爹
+        第二步：让A的爹以table形式展示
+        第三步：让A以table-cell展示
+        第四步给A设置：vertical-align:middle;*/
+
+
+        /*4> 元素A要垂直居中 并且元素A 有高度
+          第一步 给元素A找一个哥哥  哥哥浮动left
+          第二步 让哥哥的高度为爹的一半（50%）哥哥浮动
+          第三部 让A清除浮动 clear：both；
+          第四步 哥哥：mairgin-bottom：-（heightA/2）
+          第五步 让A：position：  relative；*/
+
+          /*5> A元素要垂直居中
+           第一步 先给A找一个哥哥
+           第二步 A和哥哥同时设置
+                 inline-block
+                 middle
+           第三步 哥哥的高度为父亲的高度（100%）
+           两个inline-block 之间会产生空隙问题 解决间隙问题需要A和哥哥的简括和之间没有空格和回车         */
+
+    .big{
+      background-color: pink;
+      width: 300px;
+      height: 200px;
+      /*display: table;*/
+      /*position: absolute;
+      top: 50%;*/
+      /*margin-top: -100px;*/
+      /*display: table;*/
+    }
+    /*.big p{
+      background-color: lightblue;*/
+      /*height: 100px;
+      line-height: 100px;*/
+    /*}*/
+    /*.kong{
+      height: 50%;
+      width:10px;
+      background-color: yellow;
+      float: left;
+      margin-bottom: -25px;*/
+    /*}*/
+     /*.green{
+       width: 50px;
+       height: 50px;
+       background-color: lightgreen;*/
+       /*position: relative;
+       top: -25px;*/
+       /*clear: both;
+       position: relative;*/
+       /*position: absolute;
+       top:50%;
+       margin-top: -25px;*/
+       /*display: table-cell;
+       vertical-align: middle;
+       text-align: center;*/
+     /*}*/
+     .green{
+       width: 50px;
+       height: 50px;
+       background-color: lightgreen;
+     }
+  </style>
+</head>
+<body>
+  <div class="big">
+    <!-- <div class="kong"></div> -->
+    <!-- <p>我是段落</p> -->
+    <div class="green "></div>
+  </div>
+</body>
+</html>
